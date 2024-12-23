@@ -32,6 +32,14 @@ export class BizAwayApiRepository implements TripsRepository {
   }
 
   private mapBizAwayTripToTrip(bizAwayTrip: BizAwayTrip): Trip {
-    return new Trip(bizAwayTrip.id, bizAwayTrip.origin, bizAwayTrip.destination, bizAwayTrip.cost, bizAwayTrip.duration, bizAwayTrip.type, bizAwayTrip.display_name);
+    return new Trip(
+      bizAwayTrip.id,
+      bizAwayTrip.origin,
+      bizAwayTrip.destination,
+      bizAwayTrip.cost,
+      bizAwayTrip.duration,
+      bizAwayTrip.type,
+      bizAwayTrip.display_name
+    );
   }
 }

@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+  "configurations": [
+    {
+      "name": "Debug API",
+      "type": "pwa-node",
+      "request": "launch",
+      "args": [
+        "apps/nest-api/src/main.ts"
+      ],
+      "runtimeArgs": [
+        "--require",
+        "ts-node/register",
+        "--require",
+        "tsconfig-paths/register",
+      ],
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "env": {
+        "NODE_ENV": "local",
+        "NODE_PORT": "8000",
+        "TS_NODE_PROJECT": "apps/nest-api/tsconfig.app.json", // Specify the tsconfig to use
+      },
+      "envFile": "${workspaceFolder}/apps/nest-api/.env",
+      "sourceMaps": true,
+      "console": "internalConsole",
+      "outputCapture": "std",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**" // Disable the "could not read source map" error for node_modules
+      ]
+    },
+  ]
+}

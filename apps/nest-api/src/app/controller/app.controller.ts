@@ -1,8 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
 
-import { IATA3, Trip, SortBy, CreateTripService, FindTripsService, DeleteTripService } from '@bizaway/contexts';
+import { IATA3, Trip, type SortBy, CreateTripService, FindTripsService, DeleteTripService } from '@bizaway/contexts';
 
-@Controller()
+import { CreateTripDto } from '../dto/create-trip.dto';
+
+@Controller('trips')
 export class AppController {
   constructor(
     private readonly createTripService: CreateTripService,
@@ -11,14 +13,7 @@ export class AppController {
   ) {}
 
   @Post()
-  create(@Body() createTripDto: {
-    origin: IATA3;
-    destination: IATA3;
-    cost: number;
-    duration: number;
-    type: string;
-    display_name: string;
-  }): Promise<Trip> {
+  create(@Body() createTripDto: CreateTripDto): Promise<Trip> {
     return this.createTripService.create(
       createTripDto.origin,
       createTripDto.destination,
@@ -33,7 +28,7 @@ export class AppController {
   findByQuery(
     @Query('origin') origin: IATA3,
     @Query('destination') destination: IATA3,
-    @Query('sortBy') sortBy: SortBy
+    @Query('sort_by') sortBy: SortBy
   ): Promise<Trip[]> {
     return this.findTripsService.findByQuery(origin, destination, sortBy);
   }

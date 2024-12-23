@@ -5,7 +5,7 @@ import { Trip } from '../../domain';
 import { BizAwayTripVisitor } from './BizAwayTripVisitor';
 
 export class BizAwayApi {
-  private readonly baseUrl: string = 'https://g0qw7e7p0d.execute-api.eu-west-1.amazonaws.com/default/trips';
+  private readonly baseUrl: string = 'https://z0qw1e7jpd.execute-api.eu-west-1.amazonaws.com/default/trips';
   private readonly apiKey: string;
 
   constructor(apiKey: string) {
