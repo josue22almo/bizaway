@@ -3,13 +3,13 @@ import { BizAwayTrip } from "./BizAwayTrip";
 
 export class BizAwayTripVisitor implements TripVisitor {
 
-  private id: string = '';
-  private origin: IATA3 = IATA3.EMPTY;
-  private destination: IATA3 = IATA3.EMPTY;
-  private cost: number = 0;
-  private duration: number = 0;
-  private type: string = '';
-  private display_name: string = '';
+  private id = '';
+  private origin = IATA3.EMPTY;
+  private destination = IATA3.EMPTY;
+  private cost = 0;
+  private duration = 0;
+  private type = '';
+  private display_name = '';
 
   constructor(trip: Trip) {
     trip.accept(this);
