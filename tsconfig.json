@@ -7,9 +7,6 @@
       "path": "./libs/contexts"
     },
     {
-      "path": "./apps/nest-api-e2e"
-    },
-    {
       "path": "./apps/nest-api"
     }
   ]
