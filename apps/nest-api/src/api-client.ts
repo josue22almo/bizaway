@@ -19,7 +19,7 @@ export class ApiClient {
   static async new() {
     const moduleRef = await Test.createTestingModule({
       imports: [
-        AppModule.forRoot('api'),
+        AppModule.forRoot(),
       ],
     }).compile();
 
@@ -47,7 +47,7 @@ export class ApiClient {
   }
 
   async getAllTrips() {
-    return request(this.app.getHttpServer()).get('/trips');
+    return request(this.app.getHttpServer()).get('/trips/all');
   }
 
   async createTrip(trip: CreateTripDto) {

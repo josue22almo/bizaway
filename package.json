@@ -2,7 +2,10 @@
   "name": "@bizaway/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test:unit": "nx run contexts:test",
+    "test:integration": "nx run nest-api:test"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^10.0.2",

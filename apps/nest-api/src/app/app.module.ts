@@ -6,11 +6,11 @@ import { CreateTripServiceImpl } from './services/create/create-trip.service';
 import { DeleteTripServiceImpl } from './services/delete/delete-trip.service';
 import { FindTripsServiceImpl } from './services/find/find-trips.service';
 
-import { InMemoryTripsRepository, BizAwayApiRepository, TripsRepository, CreateTripService, DeleteTripService, FindTripsService } from '@bizaway/contexts';
+import { MergedTripsRepository, TripsRepository, CreateTripService, DeleteTripService, FindTripsService } from '@bizaway/contexts';
 
 @Module({})
 export class AppModule {
-  static forRoot(repositoryType: 'in-memory' | 'api'): DynamicModule {
+  static forRoot(): DynamicModule {
     return {
       module: AppModule,
       controllers: [AppController],
@@ -19,10 +19,10 @@ export class AppModule {
         {
           provide: TripsRepository,
           useFactory: (configService: ConfigService) => {
-            if (repositoryType === 'in-memory') {
-              return new InMemoryTripsRepository();
-            }
-            return new BizAwayApiRepository(configService.get('BIZAWAY_API_KEY')!);
+            return new MergedTripsRepository(
+              configService.get('BIZAWAY_BASE_URL')!,
+              configService.get('BIZAWAY_API_KEY')!
+            );
           },
           inject: [ConfigService],
         },

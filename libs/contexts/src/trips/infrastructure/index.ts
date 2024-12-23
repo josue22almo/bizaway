@@ -1,2 +1,1 @@
-export * from './bizaway/BizAwayTripsRepository';
-export * from './in-memory/InMemoryTripsRepository';
+export * from './merged-trips-repository';
