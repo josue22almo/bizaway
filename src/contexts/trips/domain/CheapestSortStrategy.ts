@@ -1,7 +1,7 @@
-import { SortAlgorithm } from "./SortAlgorithm";
+import { SortStrategy } from "./SortStrategy";
 import { Trip } from "./Trip";
 
-export class CheapestSortAlgorithm implements SortAlgorithm {
+export class CheapestSortStrategy implements SortStrategy {
   sort(trips: Trip[]): Trip[] {
     return trips.sort((a, b) => a.cost - b.cost);
   }

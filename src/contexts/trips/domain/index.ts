@@ -1,5 +1,5 @@
-export * from "./SortAlgorithm";
-export * from "./CheapestSortAlgorithm";
+export * from "./SortStrategy";
+export * from "./CheapestSortStrategy";
 export * from "./FastestSortAlgorithm";
 export * from "./Trip";
 export * from "./TripsRepository";

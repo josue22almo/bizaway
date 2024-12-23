@@ -1,5 +1,5 @@
 import { Trip } from "./Trip";
 
-export interface SortAlgorithm {
+export interface SortStrategy {
   sort(trips: Trip[]): Trip[];
 }

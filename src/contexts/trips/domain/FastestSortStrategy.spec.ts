@@ -1,11 +1,11 @@
-import { FastestSortAlgorithm } from './FastestSortAlgorithm';
+import { FastestSortStrategy } from './FastestSortAlgorithm';
 import { Trip } from './Trip';
 
 describe('FastestSortAlgorithm', () => {
-  let sortAlgorithm: FastestSortAlgorithm;
+  let sortAlgorithm: FastestSortStrategy;
 
   beforeAll(() => {
-    sortAlgorithm = new FastestSortAlgorithm();
+    sortAlgorithm = new FastestSortStrategy();
   });
 
   it('should sort trips by duration in ascending order', () => {

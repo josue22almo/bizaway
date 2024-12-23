@@ -1,11 +1,11 @@
-import { CheapestSortAlgorithm } from './CheapestSortAlgorithm';
+import { CheapestSortStrategy } from './CheapestSortStrategy';
 import { Trip } from './Trip';
 
-describe('CheapestSortAlgorithm', () => {
-  let sortAlgorithm: CheapestSortAlgorithm;
+describe('CheapestSortStrategy', () => {
+  let sortAlgorithm: CheapestSortStrategy;
 
   beforeAll(() => {
-    sortAlgorithm = new CheapestSortAlgorithm();
+    sortAlgorithm = new CheapestSortStrategy();
   });
 
   it('should sort trips by cost in ascending order', () => {
