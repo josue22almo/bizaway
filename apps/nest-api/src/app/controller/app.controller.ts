@@ -3,6 +3,7 @@ import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/commo
 import { IATA3, Trip, type SortBy, CreateTripService, FindTripsService, DeleteTripService } from '@bizaway/contexts';
 
 import { CreateTripDto } from '../dto/create-trip.dto';
+import { ApiQuery } from '@nestjs/swagger';
 
 @Controller('trips')
 export class AppController {
@@ -25,6 +26,9 @@ export class AppController {
   }
 
   @Get()
+  @ApiQuery({ name: 'origin', type: String, required: true, example: IATA3.BCN })
+  @ApiQuery({ name: 'destination', type: String, required: true, example: IATA3.AMS })
+  @ApiQuery({ name: 'sort_by', type: String, required: true, example: 'cheapest' })
   findByQuery(
     @Query('origin') origin: IATA3,
     @Query('destination') destination: IATA3,
