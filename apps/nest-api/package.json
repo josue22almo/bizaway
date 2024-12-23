@@ -41,6 +41,13 @@
             "buildTarget": "nest-api:build:production"
           }
         }
+      },
+      "test": {
+        "executor": "@nx/jest:jest",
+        "options": {
+          "jestConfig": "apps/nest-api/jest.config.ts",
+          "passWithNoTests": true
+        }
       }
     }
   }
