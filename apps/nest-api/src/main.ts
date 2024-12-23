@@ -25,7 +25,7 @@ async function bootstrap() {
     `🚀 Application is running on: http://localhost:${port}`
   );
   Logger.log(
-    `📚 Swagger documentation is available at: http://localhost:${port}/docs`
+    `📚 Swagger documentation is available at: http://localhost:${port}/api`
   );
 }
 
