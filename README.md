@@ -26,8 +26,8 @@ To get started with the Bizaway project, follow these steps:
 4. **Run tests:**
    To run tests, use the following command:
    ```sh
-   npm run test:unit
-   npm run test:integration
+   npm run test:unit -- --verbose
+   npm run test:integration -- --verbose
    ```
 
 5. **Run the project:**
