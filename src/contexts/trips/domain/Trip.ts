@@ -1,5 +1,6 @@
 import { IATA3 } from "./IATA3";
 import { v4 as uuid } from "uuid";
+import { TripVisitor } from "./TripVisitor";
 
 export class Trip {
   static create(
@@ -22,6 +23,15 @@ export class Trip {
     private readonly type: string,
     private readonly display_name: string
   ) {}
-}
 
+  accept(visitor: TripVisitor) {
+    visitor.setId(this.id);
+    visitor.setOrigin(this.origin);
+    visitor.setDestination(this.destination);
+    visitor.setCost(this.cost);
+    visitor.setDuration(this.duration);
+    visitor.setType(this.type);
+    visitor.setDisplayName(this.display_name);
+  }
+}
 

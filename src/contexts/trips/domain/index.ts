@@ -5,3 +5,4 @@ export * from "./Trip";
 export * from "./TripsRepository";
 export * from "./IATA3";
 export * from "./SortBy";
+export * from "./TripVisitor";

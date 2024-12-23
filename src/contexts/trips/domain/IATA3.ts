@@ -49,5 +49,6 @@ export enum IATA3 {
   OSL = "OSL",
   CPH = "CPH",
   HEL = "HEL",
-  VIE = "VIE"
+  VIE = "VIE",
+  EMPTY = ""
 }
